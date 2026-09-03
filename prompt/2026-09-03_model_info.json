@@ -1,0 +1,67 @@
+{
+  "description": "模型训练与性能信息",
+  "train_date": "2026-09-03",
+  "dataset": "C-MAPSS",
+  "train_samples": 16340,
+  "test_samples": 13096,
+  "input_features": 14,
+  "feature_names": [
+    "s2",
+    "s3",
+    "s4",
+    "s7",
+    "s8",
+    "s9",
+    "s11",
+    "s12",
+    "s13",
+    "s14",
+    "s15",
+    "s17",
+    "s20",
+    "s21"
+  ],
+  "preprocessing": {
+    "method": "Z-Score标准化",
+    "scaler": "StandardScaler"
+  },
+  "fault_classifier": {
+    "algorithm": "RandomForestClassifier",
+    "n_estimators": 100,
+    "max_depth": null,
+    "min_samples_split": 2,
+    "min_samples_leaf": 1,
+    "max_features": "sqrt",
+    "criterion": "gini",
+    "classes": [
+      "正常",
+      "风扇故障",
+      "压气机故障",
+      "涡轮故障",
+      "组合故障"
+    ],
+    "performance": {
+      "accuracy": 0.92,
+      "precision_macro": 0.9,
+      "recall_macro": 0.89,
+      "f1_macro": 0.89
+    },
+    "file_size_mb": 7.27
+  },
+  "rul_predictor": {
+    "algorithm": "RandomForestRegressor",
+    "n_estimators": 200,
+    "max_depth": 20,
+    "min_samples_split": 5,
+    "min_samples_leaf": 2,
+    "max_features": "sqrt",
+    "criterion": "squared_error",
+    "rul_label_method": "分段线性（上限125）",
+    "performance": {
+      "mae": 12.5,
+      "rmse": 18.3,
+      "r2_score": 0.87
+    },
+    "file_size_mb": 88.09
+  }
+}

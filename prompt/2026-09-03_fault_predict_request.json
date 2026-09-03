@@ -1,0 +1,25 @@
+{
+  "endpoint": "POST /api/fault/predict",
+  "description": "单样本故障诊断请求",
+  "request_body": {
+    "features": [
+      643.52,
+      1590.87,
+      1403.14,
+      21.61,
+      553.97,
+      2388.03,
+      47.24,
+      521.48,
+      2388.05,
+      8126.34,
+      8.4238,
+      392,
+      38.98,
+      23.4283
+    ],
+    "device_id": "engine_001",
+    "cycle": 100
+  },
+  "content_type": "application/json"
+}

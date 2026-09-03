@@ -1,0 +1,45 @@
+{
+  "project_name": "基于多智能算法的机械设备故障预测与运维决策系统",
+  "version": "1.0.0",
+  "create_date": "2026-09-03",
+  "backend": {
+    "host": "0.0.0.0",
+    "port": 8000,
+    "framework": "FastAPI",
+    "asgi_server": "uvicorn",
+    "cors_origins": [
+      "*"
+    ]
+  },
+  "frontend": {
+    "framework": "Vue3",
+    "ui_library": "Element Plus",
+    "chart_library": "ECharts",
+    "api_base": "http://localhost:8000"
+  },
+  "models": {
+    "fault_classifier": {
+      "path": "algorithms/models/fault_classifier.pkl",
+      "algorithm": "RandomForestClassifier",
+      "n_estimators": 100,
+      "input_features": 14
+    },
+    "rul_predictor": {
+      "path": "algorithms/models/rul_predictor.pkl",
+      "algorithm": "RandomForestRegressor",
+      "n_estimators": 200,
+      "max_depth": 20,
+      "input_features": 14,
+      "rul_max": 125
+    }
+  },
+  "database": {
+    "type": "SQLite",
+    "path": "data/equipment.db"
+  },
+  "performance": {
+    "single_predict_timeout_ms": 1000,
+    "batch_predict_timeout_s": 10,
+    "max_batch_size": 20000
+  }
+}

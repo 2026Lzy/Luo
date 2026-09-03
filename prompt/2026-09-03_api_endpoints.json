@@ -1,0 +1,72 @@
+{
+  "base_url": "http://localhost:8000",
+  "description": "机械设备故障预测与运维决策系统API接口列表",
+  "version": "1.0.0",
+  "endpoints": [
+    {
+      "method": "GET",
+      "path": "/api/health",
+      "description": "健康检查",
+      "auth_required": false
+    },
+    {
+      "method": "GET",
+      "path": "/docs",
+      "description": "Swagger UI接口文档",
+      "auth_required": false
+    },
+    {
+      "method": "POST",
+      "path": "/api/fault/predict",
+      "description": "单样本故障诊断",
+      "auth_required": false
+    },
+    {
+      "method": "POST",
+      "path": "/api/fault/batch",
+      "description": "批量故障诊断",
+      "auth_required": false
+    },
+    {
+      "method": "POST",
+      "path": "/api/rul/predict",
+      "description": "剩余使用寿命预测",
+      "auth_required": false
+    },
+    {
+      "method": "POST",
+      "path": "/api/maintenance",
+      "description": "运维决策建议",
+      "auth_required": false
+    },
+    {
+      "method": "GET",
+      "path": "/api/history",
+      "description": "历史记录查询",
+      "auth_required": false
+    },
+    {
+      "method": "GET",
+      "path": "/api/history/{id}",
+      "description": "查询单条历史记录",
+      "auth_required": false
+    },
+    {
+      "method": "DELETE",
+      "path": "/api/history/{id}",
+      "description": "删除历史记录",
+      "auth_required": false
+    },
+    {
+      "method": "GET",
+      "path": "/api/stats",
+      "description": "系统统计信息",
+      "auth_required": false
+    }
+  ],
+  "common_response_format": {
+    "code": "0表示成功，非0表示失败",
+    "message": "响应消息",
+    "data": "响应数据"
+  }
+}

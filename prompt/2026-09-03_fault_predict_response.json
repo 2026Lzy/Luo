@@ -1,0 +1,24 @@
+{
+  "endpoint": "POST /api/fault/predict",
+  "description": "单样本故障诊断响应",
+  "status_code": 200,
+  "response_body": {
+    "code": 0,
+    "message": "success",
+    "data": {
+      "device_id": "engine_001",
+      "cycle": 100,
+      "fault_type": "压气机故障",
+      "fault_code": "FC_02",
+      "confidence": 0.87,
+      "probabilities": {
+        "正常": 0.05,
+        "风扇故障": 0.03,
+        "压气机故障": 0.87,
+        "涡轮故障": 0.03,
+        "组合故障": 0.02
+      },
+      "predict_time_ms": 45
+    }
+  }
+}

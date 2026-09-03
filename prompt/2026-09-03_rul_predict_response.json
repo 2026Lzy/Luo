@@ -1,0 +1,19 @@
+{
+  "endpoint": "POST /api/rul/predict",
+  "description": "剩余使用寿命预测响应",
+  "status_code": 200,
+  "response_body": {
+    "code": 0,
+    "message": "success",
+    "data": {
+      "device_id": "engine_001",
+      "cycle": 100,
+      "rul": 47,
+      "rul_unit": "运行周期",
+      "rul_max_limit": 125,
+      "health_status": "退化中",
+      "degradation_stage": "中期退化",
+      "predict_time_ms": 38
+    }
+  }
+}
